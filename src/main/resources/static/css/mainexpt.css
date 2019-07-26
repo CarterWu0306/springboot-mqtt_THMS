@@ -1,0 +1,53 @@
+.bottom_info_area{
+	position:absolute;
+	bottom:0px;
+	width:100%;
+	height:50px;
+	text-align:center;
+}
+
+.review_type_count{
+	color:#82b4e6;
+}
+
+.layui-box{
+	
+	float:right;
+	
+}
+
+.review_tab_selected{
+	background:#fff;
+	color:blue;
+	font-size:12px;
+	border-top:1px #e4e4e4 solid;
+	border-left:1px #e4e4e4 solid;
+	border-right:1px #e4e4e4 solid;
+}
+
+.review_tab_selected1{
+	background:#fff;
+	color:#5aaace;
+	font-size:12px;
+	border-bottom:2px #5aaace solid;
+}
+
+.reviewed_tab_none{
+	background:#fff;
+	font-size:7px;
+	border-bottom:1px #e4e4e4 solid;
+}
+
+.reviewed_tab_none{
+	background:#fff;
+	font-size:7px;
+	border-bottom:1px #e4e4e4 solid;
+}
+
+
+
+
+.layui-layer-title{
+	background-color:#5ba1ec;
+	color:#fff;
+}

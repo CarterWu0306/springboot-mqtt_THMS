@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+.layui-form-select dl{
+    	z-index:9999;
+   }
+   .layui-form-label{padding:0;}
+   .layui-input-block{
+   	margin-left: 90px;
+   }
+   .layui-form-item .layui-form-checkbox[lay-skin=primary]{margin-top:0;}
+   .clear{ clear:both} 
+   .attachTable th,.attachTable td{
+   	    padding: 4px 15px;
+   }
+   .layui-form-pane .layui-form-label,.layui-input, .layui-select, .layui-textarea{height:30px;}
+   .layui-form-item{margin-bottom:0;}

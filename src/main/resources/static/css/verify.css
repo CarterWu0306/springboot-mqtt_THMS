@@ -1,0 +1,58 @@
+.con {
+	width: 204px;
+	height:32px;
+}
+
+.verify-code {
+	float: left;
+	font-size: 20px;
+	text-align: center;
+	cursor: pointer;
+	margin-bottom: 5px;
+	border: 1px solid #ddd;
+}
+
+.cerify-code-panel {
+	height:100%;
+	overflow:hidden;
+}
+
+.verify-code-area {
+	float:left;
+}
+
+.verify-input-area {
+	float: left;
+	width: 94%;
+	padding-right: 10px;
+}
+
+.verify-change-area {
+	line-height: 30px;
+	float: left;
+}
+
+.varify-input-code {
+	display:inline-block; 
+	width: 100%;
+	height: 25px;
+	line-height: 25px;
+}
+
+.verify-change-code {
+	color: #337AB7;
+	cursor: pointer;
+}
+
+.verify-btn {
+	display: block;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	background-color: #337AB7;
+	color:#FFFFFF;
+	text-align: center;
+	border:none;
+	margin-top: 10px;
+}
+

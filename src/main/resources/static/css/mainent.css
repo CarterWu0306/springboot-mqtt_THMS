@@ -1,0 +1,187 @@
+.five {
+	height:120px;
+	width:20%;
+	float:left;
+}
+
+.five_sub{
+	width:96%;
+	height:85%;
+	margin:4% 2% 0% 1%;
+	border-radius:5px;
+}
+
+.five_sub_num{
+	line-height:85px;
+	color:#fff;
+	font-size:40px;
+	margin-left:30px;
+}
+
+.five_sub_type{
+	color:#fff;
+	margin-left:30px;
+	margin-top:-20px;
+}
+
+
+
+.mypanel{
+	width:calc(100% - 10px);
+	height:96%;
+	background:#f4f2f3;
+	border-radius:5px;
+	box-shadow: 0 0 10px 2px #bdcee0;
+	margin-left:5px;
+	margin-right:5px;
+	padding-bottom:10px;
+}
+
+
+.five_sub_icon{
+	width:30px;
+	height:30px;
+	float:right;
+	margin-top:15px;
+	margin-right:20px;
+}
+
+
+.applys_panel{
+	width:calc(100% - 35px);
+	height:50px;
+	background:#fff;
+	margin-left:20px;
+	margin-top:10px;
+	border:2px #eeeeee solid;
+	border-radius:5px;
+}
+
+.applys_info{
+	width:480px;
+	margin-left:10px;
+	font-size:15px;
+	line-height:40px;
+}
+
+.applys_btn{
+	float:right;
+	margin-right:20px;
+	margin-top:-35px;
+	background:#4eaaf4;
+	color:#fff;
+	font-size:15px;
+	text-align:center;
+	width:80px;
+	height:26px;
+	line-height: 26px;
+	border:1px #53adf5 solid;
+	border-radius:30px;
+}
+
+.applys_btn_unenable{
+	float:right;
+	margin-right:20px;
+	margin-top:-35px;
+	background:#d0d0d0;
+	color:#fff;
+	font-size:15px;
+	text-align:center;
+	width:80px;
+	height:26px;
+	line-height: 26px;
+	border:1px #d0d0d0 solid;
+	border-radius:30px;
+}
+
+.deadline_green{
+	width:200px;
+	margin-top:-10px;
+	margin-left:-5px;
+	background:url(../images/deadlinegreen.png) no-repeat;
+	background-size:100%;
+}
+
+.deadline_red{
+	width:200px;
+	margin-top:-10px;
+	margin-left:-5px;
+	background:url(../images/deadlinered.png) no-repeat;
+	background-size:100%;
+}
+
+.deadline_none{
+	width:200px;
+	margin-top:-10px;
+	margin-left:-5px;
+	/* background:url(../images/deadlinered.png) no-repeat;
+	background-size:100%; */
+}
+
+.deadline_info{
+	font-size:10px;
+	color:#fff;
+	margin-left:10px;
+}
+
+
+.inform_area{
+	background:#fff;
+	width:calc(100% - 20px);;
+	height:220px;
+	margin-top:10px;
+	margin-left:5px;
+	border:1px #cce0f5 solid;
+	border-radius:5px;
+}
+
+.inform_header{
+	background:#ebf6ff;
+	width:100%;
+	height:29px;
+	border-bottom:1px #c1dbf5 solid;
+}
+
+.inform_header_bgp{
+	position:absolute;
+	left:5px;
+	top:4px;
+	width:195px;
+	height:36px;
+	background:url(../images/noticehead.png) no-repeat;
+	background-size:100%;
+}
+
+
+.project_area{
+	background:#fff;
+	width:calc(100% - 25px);;
+	height:220px;
+	margin-top:10px;
+	margin-left:20px;
+	border:1px #cce0f5 solid;
+	border-radius:5px;
+	
+}
+
+.project_header{
+	background:#ebf6ff;
+	width:100%;
+	height:29px;
+	border-bottom:1px #c1dbf5 solid;
+}
+
+.project_header_bgp{
+	position:absolute;
+	left:20px;
+	top:4px;
+	width:195px;
+	height:36px;
+	background:url(../images/noticehead.png) no-repeat;
+	background-size:100%;
+}
+
+.layui-table-cell{
+    height:18px;
+    line-height:18px;
+}

@@ -1,0 +1,42 @@
+{
+	"contentManagement": [
+		{
+					"title" : "实时数据变化图",
+					"icon" : "&#xe631;",
+					"href" : "show",
+					"spread" : false
+		},
+		{
+					"title" : "历史数据查询",
+					"icon" : "&#xe631;",
+					"href" : "historySel",
+					"spread" : false
+		},
+		{
+					"title" : "历史数据统计图",
+					"icon" : "&#xe631;",
+					"href" : "history",
+					"spread" : false
+		},
+		{
+					"title" : "报警统计图",
+					"icon" : "&#xe631;",
+					"href" : "alarm?startParam=&endParam=&deviceId=",
+					"spread" : false
+		},
+		{
+			"title" : "报警记录管理",
+			"icon" : "&#xe631;",
+			"href" : "alarmSel",
+			"spread" : false
+		},
+		{
+			"title" : "设备管理",
+			"icon" : "&#xe631;",
+			"href" : "devcManage",
+			"spread" : false
+		}
+	]
+}
+
+

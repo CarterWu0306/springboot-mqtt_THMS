@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.carter.mapper.DeviceMapper" >
+  <resultMap id="BaseResultMap" type="com.carter.pojo.Device" >
+    <id column="device_id" property="deviceId" jdbcType="INTEGER" />
+    <result column="client_id" property="clientId" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="duty_person" property="dutyPerson" jdbcType="VARCHAR" />
+    <result column="code" property="code" jdbcType="VARCHAR" />
+    <result column="descript" property="descript" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="create_person" property="createPerson" jdbcType="VARCHAR" />
+    <result column="memo" property="memo" jdbcType="VARCHAR" />
+    <result column="alarm_status" property="alarmStatus" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    device_id, client_id, status, name, duty_person, code, descript, create_time, create_person,
+    memo, alarm_status, type
+  </sql>
+
+  <select id="selectDeviceByDevcName" resultMap="BaseResultMap" parameterType="String">
+    select *
+    from device
+    where name=#{devcName}
+  </select>
+
+  <select id="selectDeviceByClientid" resultMap="BaseResultMap" parameterType="String">
+    select *
+    from device
+    where client_id=#{clientid}
+  </select>
+
+  <select id="selDevcManageInfo" resultMap="BaseResultMap">
+    select *
+    from device
+    <where>
+      <if test="params.devcName!=null and params.devcName!=''">
+        and device.name='${params.devcName}'
+      </if>
+      <if test="params.typeParam!=null and params.typeParam!=''">
+        and device.type='${params.typeParam}'
+      </if>
+      <if test="params.devcStatusParam!=null and params.devcStatusParam!=''">
+        and device.status='${params.devcStatusParam}'
+      </if>
+      <if test="params.alarmStatusParam!=null and params.alarmStatusParam!=''">
+        and device.alarm_status='${params.alarmStatusParam}'
+      </if>
+    </where>
+  </select>
+
+  <select id="selectDevcNameDistinct" resultType="String">
+    select DISTINCT name
+    from device
+  </select>
+
+  <select id="countDevcStatus" resultType="INTEGER" parameterType="String">
+    select count(*)
+    from device
+    where status=#{status}
+  </select>
+
+  <select id="countAlarmStatus" resultType="INTEGER" parameterType="String">
+    select count(*)
+    from device
+    where alarm_status=#{alarmStatus}
+  </select>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from device
+    where device_id = #{deviceId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from device
+    where device_id = #{deviceId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.carter.pojo.Device" >
+    insert into device (device_id, client_id, status,
+      name, duty_person, code,
+      descript, create_time, create_person,
+      memo, alarm_status, type
+      )
+    values (#{deviceId,jdbcType=INTEGER}, #{clientId,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR},
+      #{name,jdbcType=VARCHAR}, #{dutyPerson,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR},
+      #{descript,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{createPerson,jdbcType=VARCHAR},
+      #{memo,jdbcType=VARCHAR}, #{alarmStatus,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.carter.pojo.Device" >
+    insert into device
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="deviceId != null" >
+        device_id,
+      </if>
+      <if test="clientId != null" >
+        client_id,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="dutyPerson != null" >
+        duty_person,
+      </if>
+      <if test="code != null" >
+        code,
+      </if>
+      <if test="descript != null" >
+        descript,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="createPerson != null" >
+        create_person,
+      </if>
+      <if test="memo != null" >
+        memo,
+      </if>
+      <if test="alarmStatus != null" >
+        alarm_status,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="deviceId != null" >
+        #{deviceId,jdbcType=INTEGER},
+      </if>
+      <if test="clientId != null" >
+        #{clientId,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="dutyPerson != null" >
+        #{dutyPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="descript != null" >
+        #{descript,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createPerson != null" >
+        #{createPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null" >
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="alarmStatus != null" >
+        #{alarmStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.carter.pojo.Device" >
+    update device
+    <set >
+      <if test="clientId != null" >
+        client_id = #{clientId,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="dutyPerson != null" >
+        duty_person = #{dutyPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null" >
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="descript != null" >
+        descript = #{descript,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createPerson != null" >
+        create_person = #{createPerson,jdbcType=VARCHAR},
+      </if>
+      <if test="memo != null" >
+        memo = #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="alarmStatus != null" >
+        alarm_status = #{alarmStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where device_id = #{deviceId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.carter.pojo.Device" >
+    update device
+    set client_id = #{clientId,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      duty_person = #{dutyPerson,jdbcType=VARCHAR},
+      code = #{code,jdbcType=VARCHAR},
+      descript = #{descript,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_person = #{createPerson,jdbcType=VARCHAR},
+      memo = #{memo,jdbcType=VARCHAR},
+      alarm_status = #{alarmStatus,jdbcType=VARCHAR},
+      type = #{type,jdbcType=VARCHAR}
+    where device_id = #{deviceId,jdbcType=INTEGER}
+  </update>
+</mapper>

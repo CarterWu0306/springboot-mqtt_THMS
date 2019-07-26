@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>layui</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="css/yw_index.css" media="all" />
+    <link rel="stylesheet" href="css/mainexpt.css" media="all" />
+    <script src="js/echarts.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+</head>
+
+<body>
+<form class="layui-form">
+    <div>
+        <blockquote class="layui-elem-quote quoteBox">
+            <form class="layui-form">
+                <div class="layui-inline">
+                    <select id="type" lay-verify="">
+                        <option value="">请选择数据类型</option>
+                        <option value="01">温湿度</option>
+                        <option value="02">六氟化硫浓度</option>
+                    </select>
+                </div>
+                <div class="layui-inline">
+                    <select id="devcName" lay-verify="">
+                        <option value="">请选择设备名称</option>
+                        <option th:each="list:${optionText}" th:text="${list}"></option>
+                    </select>
+                </div>
+                <div class="layui-inline">
+                    <div class="layui-input-inline">
+                        <input type="text" class="layui-input" style="width: 300px" id="daterange" placeholder="时间范围选择">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn layui-btn-normal search" type="button">查询</button>
+                </div>
+            </form>
+        </blockquote>
+    </div>
+</form>
+
+<div>
+    <blockquote class="layui-elem-quote quoteBox">
+        <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+        <div id="history" style="width: 1650px;height:725px;"></div>
+    </blockquote>
+</div>
+
+<script type="text/javascript" src="layui/layui.js"></script>
+<script type="text/javascript" th:inline="none" src="js/history.js"></script>
+<script>
+    layui.use('form', function(){});
+</script>
+</body>
+</html>
